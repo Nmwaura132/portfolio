@@ -1,0 +1,108 @@
+{
+    "nodes": [
+        {
+            "parameters": {
+                "httpMethod": "POST",
+                "path": "portfolio-chat",
+                "responseMode": "responseNode",
+                "options": {
+                    "allowedOrigins": "*"
+                }
+            },
+            "id": "webhook-trigger",
+            "name": "Chat Webhook",
+            "type": "n8n-nodes-base.webhook",
+            "typeVersion": 2,
+            "position": [
+                250,
+                300
+            ],
+            "webhookId": "portfolio-chat-webhook"
+        },
+        {
+            "parameters": {
+                "model": "gpt-4o-mini",
+                "messages": {
+                    "values": [
+                        {
+                            "content": "={{$json.body.message}}"
+                        }
+                    ]
+                },
+                "systemMessage": "You are Nelson Mwaura's AI assistant on his portfolio website. Nelson is an AI Automation Architect specializing in:\n\n- **n8n Workflows**: Building complex automation pipelines\n- **Django Backend**: REST APIs, CRM systems, ERP integration\n- **React Frontend**: Modern, responsive web applications\n- **AI Chatbots**: Intelligent conversational interfaces\n- **Data Science**: Predictive models, analytics, Power BI\n\nKey Achievements:\n- Reduced manual data entry by 80% at Optiven\n- Automated 500+ monthly customer queries\n- Saved 40+ hours weekly through automation\n- Built CRM systems handling thousands of leads\n\nBe friendly, professional, and helpful. Answer questions about Nelson's skills, services, and experience. If asked about hiring or projects, encourage visitors to reach out via email (nmwaura132@gmail.com) or LinkedIn.\n\nKeep responses concise (2-3 sentences) unless more detail is requested.",
+                "options": {}
+            },
+            "id": "openai-chat",
+            "name": "AI Agent",
+            "type": "@n8n/n8n-nodes-langchain.openAi",
+            "typeVersion": 1.8,
+            "position": [
+                500,
+                300
+            ],
+            "credentials": {
+                "openAiApi": {
+                    "id": "YOUR_OPENAI_CREDENTIAL_ID",
+                    "name": "OpenAI Account"
+                }
+            }
+        },
+        {
+            "parameters": {
+                "respondWith": "json",
+                "responseBody": "={{ { \"response\": $json.message.content } }}",
+                "options": {
+                    "responseHeaders": {
+                        "entries": [
+                            {
+                                "name": "Access-Control-Allow-Origin",
+                                "value": "*"
+                            }
+                        ]
+                    }
+                }
+            },
+            "id": "response-node",
+            "name": "Send Response",
+            "type": "n8n-nodes-base.respondToWebhook",
+            "typeVersion": 1.1,
+            "position": [
+                750,
+                300
+            ]
+        }
+    ],
+    "connections": {
+        "Chat Webhook": {
+            "main": [
+                [
+                    {
+                        "node": "AI Agent",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "AI Agent": {
+            "main": [
+                [
+                    {
+                        "node": "Send Response",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        }
+    },
+    "pinData": {},
+    "settings": {
+        "executionOrder": "v1"
+    },
+    "staticData": null,
+    "tags": [],
+    "triggerCount": 0,
+    "updatedAt": "2026-01-10T14:48:00.000Z",
+    "versionId": "1"
+}
