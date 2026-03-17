@@ -14,7 +14,7 @@ const projects = [
         icon: BarChart3,
         color: '#00d4ff',
         status: 'live',
-        github: 'https://github.com/Nmwaura132',
+        github: 'https://github.com/Nmwaura132/nse-analytics',
         demo: null,
         technologies: ['Django', 'React', 'Python', 'MySQL', 'Docker', 'scikit-learn', 'Telegram API'],
         impacts: [
