@@ -16,7 +16,7 @@ const COMMANDS = {
   whoami: () =>
     'Nelson Peter Mwangi Mwaura\n' +
     'Backend Dev · Data Scientist · ML Engineer · Automation Architect\n' +
-    'Nairobi, Kenya — open to remote roles with US/EU companies.\n' +
+    'Nairobi, Kenya\n' +
     '5+ yrs building Django APIs, ML pipelines, data science solutions, n8n workflows.',
 
   'ls projects/': () =>
