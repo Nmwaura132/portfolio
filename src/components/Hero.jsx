@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Github, ArrowDown } from 'lucide-react';
+import { Github, ArrowDown, Download } from 'lucide-react';
 
 const roles = [
   'a Backend Developer',
@@ -75,6 +75,15 @@ export default function Hero() {
           >
             <Github size={16} />
             GitHub
+          </a>
+          <a
+            href="https://www.linkedin.com/in/nelson-peter"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-secondary"
+          >
+            <Download size={16} />
+            Resume
           </a>
         </div>
       </motion.div>
