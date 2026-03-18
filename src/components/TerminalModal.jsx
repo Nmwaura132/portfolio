@@ -59,17 +59,26 @@ export default function TerminalModal() {
   const inputRef = useRef(null);
   const bodyRef = useRef(null);
 
-  // Toggle with backtick key
+  // Toggle with backtick key or custom event
   useEffect(() => {
     const onKey = (e) => {
-      if (e.code === 'Backquote' && e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
+      if (
+        (e.code === 'Backquote' || e.key === '`') &&
+        e.target.tagName !== 'INPUT' &&
+        e.target.tagName !== 'TEXTAREA'
+      ) {
         e.preventDefault();
         setIsOpen((prev) => !prev);
       }
       if (e.key === 'Escape') setIsOpen(false);
     };
+    const onOpenEvent = () => setIsOpen(true);
     window.addEventListener('keydown', onKey);
-    return () => window.removeEventListener('keydown', onKey);
+    window.addEventListener('open-terminal', onOpenEvent);
+    return () => {
+      window.removeEventListener('keydown', onKey);
+      window.removeEventListener('open-terminal', onOpenEvent);
+    };
   }, []);
 
   // Focus input on open + show welcome

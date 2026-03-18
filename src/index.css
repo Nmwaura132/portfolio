@@ -191,6 +191,33 @@ a { text-decoration: none; color: inherit; }
   width: 52px;
 }
 
+.sidebar-terminal-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: auto;
+  margin-bottom: 1.5rem;
+  background: transparent;
+  border: 1px solid var(--teal-border);
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  padding: 0.5rem 0.875rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: color var(--transition), border-color var(--transition);
+  width: fit-content;
+}
+.sidebar-terminal-btn:hover { color: var(--teal); border-color: var(--teal); }
+.sidebar-terminal-hint {
+  margin-left: 0.25rem;
+  font-size: 0.7rem;
+  color: var(--text-disabled);
+  background: var(--navy-lighter);
+  padding: 0 0.3rem;
+  border-radius: 2px;
+}
+
 .sidebar-social {
   display: flex;
   gap: 1.5rem;

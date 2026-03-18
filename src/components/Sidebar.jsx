@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Github, Linkedin, Mail } from 'lucide-react';
+import { Github, Linkedin, Mail, Terminal } from 'lucide-react';
 
 const navItems = [
   { id: 'about',    label: 'About'    },
@@ -67,6 +67,17 @@ export default function Sidebar() {
           ))}
         </ul>
       </nav>
+
+      {/* Terminal button */}
+      <button
+        className="sidebar-terminal-btn"
+        onClick={() => window.dispatchEvent(new Event('open-terminal'))}
+        aria-label="Open terminal"
+      >
+        <Terminal size={14} />
+        <span>Open Terminal</span>
+        <code className="sidebar-terminal-hint">`</code>
+      </button>
 
       {/* Social links */}
       <div className="sidebar-social">
