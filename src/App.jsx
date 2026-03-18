@@ -1,31 +1,33 @@
+import './App.css';
 import './index.css';
-import Navbar from './components/Navbar';
+import Sidebar from './components/Sidebar';
 import Hero from './components/Hero';
-import TechStack from './components/TechStack';
 import Projects from './components/Projects';
+import TechStack from './components/TechStack';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import TerminalModal from './components/TerminalModal';
+import AchievementToast from './components/AchievementToast';
 
 function App() {
   return (
     <>
-      {/* Background Effects */}
-      <div className="bg-gradient-mesh"></div>
-      <div className="bg-grid-pattern"></div>
+      <div className="layout-sidebar">
+        <Sidebar />
+      </div>
 
-      {/* Navigation */}
-      <Navbar />
+      <div className="layout-content">
+        <main>
+          <Hero />
+          <Projects />
+          <TechStack />
+          <Contact />
+        </main>
+        <Footer />
+      </div>
 
-      {/* Main Content */}
-      <main>
-        <Hero />
-        <Projects />
-        <TechStack />
-        <Contact />
-      </main>
-
-      {/* Footer */}
-      <Footer />
+      <TerminalModal />
+      <AchievementToast />
     </>
   );
 }
