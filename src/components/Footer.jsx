@@ -5,7 +5,7 @@ export default function Footer() {
     <footer className="footer">
       <span className="footer-brand">Nelson Mwaura</span>
       <span className="footer-center">
-        &copy; {currentYear} &middot; Built with React &amp; Django
+        &copy; {currentYear} &middot; Built with React &amp; Vite
       </span>
       <span className="footer-hint">
         Press <code>`</code> for terminal

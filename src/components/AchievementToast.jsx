@@ -2,15 +2,16 @@ import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const ACHIEVEMENTS = {
-  about:    { emoji: '\u{1F3C6}', message: "Achievement Unlocked: Found Nelson's Portfolio" },
-  projects: { emoji: '\u{1F513}', message: 'Stalked the Projects' },
-  skills:   { emoji: '\u{2694}\uFE0F',  message: 'Checked the Tech Arsenal' },
-  contact:  { emoji: '\u{1F4EC}', message: 'Reached Final Boss: Contact' },
+  about:    { emoji: '🏆', message: "Achievement Unlocked: Found Nelson's Portfolio" },
+  projects: { emoji: '🔓', message: 'Explored the Projects' },
+  skills:   { emoji: '⚔️',  message: 'Checked the Tech Arsenal' },
+  contact:  { emoji: '📬', message: 'Reached Final Boss: Contact' },
 };
 
 export default function AchievementToast() {
   const [toast, setToast] = useState(null);
   const triggered = useRef(new Set());
+  const timerRef = useRef(null);
 
   useEffect(() => {
     const sections = Object.keys(ACHIEVEMENTS)
@@ -24,8 +25,9 @@ export default function AchievementToast() {
             triggered.current.add(entry.target.id);
             const achievement = ACHIEVEMENTS[entry.target.id];
             if (achievement) {
+              clearTimeout(timerRef.current);
               setToast(achievement);
-              setTimeout(() => setToast(null), 3000);
+              timerRef.current = setTimeout(() => setToast(null), 3000);
             }
           }
         });
@@ -34,7 +36,10 @@ export default function AchievementToast() {
     );
 
     sections.forEach((el) => observer.observe(el));
-    return () => observer.disconnect();
+    return () => {
+      observer.disconnect();
+      clearTimeout(timerRef.current);
+    };
   }, []);
 
   return (
@@ -48,7 +53,7 @@ export default function AchievementToast() {
           transition={{ duration: 0.4, ease: 'easeOut' }}
         >
           <span className="achievement-emoji">{toast.emoji}</span>
-          <span className="achievement-label">{toast.message}</span>
+          <span className="achievement-message">{toast.message}</span>
         </motion.div>
       )}
     </AnimatePresence>

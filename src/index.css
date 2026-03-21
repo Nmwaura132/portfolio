@@ -1,6 +1,3 @@
-/* ── Google Fonts ──────────────────────────────────────── */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
-
 /* ── CSS Variables ─────────────────────────────────────── */
 :root {
   --navy:          #0a192f;
@@ -487,14 +484,15 @@ a { text-decoration: none; color: inherit; }
   max-width: 340px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
   pointer-events: none;
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
 }
 
-.achievement-label {
-  color: var(--teal);
-  font-size: 0.65rem;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  margin-bottom: 0.3rem;
+.achievement-emoji {
+  font-size: 1.25rem;
+  line-height: 1;
+  flex-shrink: 0;
 }
 
 .achievement-message {
@@ -659,6 +657,8 @@ a { text-decoration: none; color: inherit; }
 }
 
 .card:hover .project-icon-wrap { border-color: var(--teal-border); }
+
+.project-body { min-width: 0; }
 
 .project-header {
   display: flex;

@@ -68,10 +68,7 @@ export default function TechStack() {
                       whileInView={{ scaleX: 1 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.8, ease: 'easeOut' }}
-                      style={{
-                        width: `${(skill.level / 10) * 100}%`,
-                        transformOrigin: 'left',
-                      }}
+                      style={{ width: `${(skill.level / 10) * 100}%` }}
                     />
                   </div>
                   <span className="rpg-level">Lv.{skill.level}</span>

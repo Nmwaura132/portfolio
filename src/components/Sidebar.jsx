@@ -18,7 +18,7 @@ export default function Sidebar() {
       if (!el) return null;
       const obs = new IntersectionObserver(
         ([entry]) => { if (entry.isIntersecting) setActiveSection(id); },
-        { rootMargin: '-20% 0px -70% 0px' }
+        { rootMargin: '-10% 0px -60% 0px' }
       );
       obs.observe(el);
       return obs;
@@ -90,7 +90,7 @@ export default function Sidebar() {
           <Github size={20} />
         </a>
         <a
-          href="https://linkedin.com/in/nelson-peter"
+          href="https://www.linkedin.com/in/nelson-peter"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="LinkedIn"

@@ -87,7 +87,8 @@ export default function TerminalModal() {
       setLines([{ type: 'info', text: WELCOME }]);
       setInputValue('');
       setHistoryIdx(-1);
-      setTimeout(() => inputRef.current?.focus(), 60);
+      const timer = setTimeout(() => inputRef.current?.focus(), 60);
+      return () => clearTimeout(timer);
     }
   }, [isOpen]);
 
