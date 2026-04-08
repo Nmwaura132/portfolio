@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Github, ExternalLink, BarChart3, Brain, Zap, Database } from 'lucide-react';
+import { Github, ExternalLink, BarChart3, Brain, Zap, FileText } from 'lucide-react';
 
 const projects = [
   {
@@ -52,18 +52,18 @@ const projects = [
   },
   {
     id: 4,
-    title: 'Invoice Generator',
-    category: 'Full-Stack',
+    title: 'Document Intelligence API',
+    category: 'AI · Backend',
     description:
-      'Web app for creating, sending, and tracking invoices. Django REST backend with a React frontend — supports PDF export, client management, payment status tracking, and email delivery.',
-    icon: Database,
-    github: 'https://github.com/Nmwaura132',
+      'Production-ready async API that extracts structured data from invoice PDFs and images using GPT-4o Vision. Celery + Redis job queue, PostgreSQL persistence, per-field confidence scoring, and a React drag-and-drop UI.',
+    icon: FileText,
+    github: 'https://github.com/Nmwaura132/doc-intel-api',
     demo: null,
-    technologies: ['Django', 'React', 'MySQL', 'REST API', 'PDF generation', 'Docker'],
+    technologies: ['FastAPI', 'Celery', 'Redis', 'PostgreSQL', 'GPT-4o Vision', 'React', 'Docker'],
     highlights: [
-      'Django REST API with React frontend and JWT authentication',
-      'PDF invoice generation with customisable templates',
-      'Payment status tracking with automated email reminders',
+      'Async Celery queue — upload returns immediately, client polls for result',
+      'Per-field confidence scores (0.0–1.0) with SHA-256 deduplication',
+      'Multi-page PDF support via pdf2image at 300 DPI',
     ],
   },
 ];
