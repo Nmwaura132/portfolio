@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Github, ExternalLink, BarChart3, Brain, Zap, FileText } from 'lucide-react';
+import { Github, ExternalLink, BarChart3, Brain, Zap, FileText, CheckSquare } from 'lucide-react';
 
 const projects = [
   {
@@ -52,6 +52,22 @@ const projects = [
   },
   {
     id: 4,
+    title: 'FlowTodo',
+    category: 'Full-Stack · Productivity',
+    description:
+      'Cross-platform offline-first Kanban + todo app. Web (React + Vite) and mobile (React Native + Expo) share a Zustand store, syncing via Supabase Realtime. Features NLP date parsing, a custom Calendly-style date picker, recurring tasks, and push reminders.',
+    icon: CheckSquare,
+    github: 'https://github.com/Nmwaura132/flow-todo',
+    demo: null,
+    technologies: ['React', 'React Native', 'Expo', 'FastAPI', 'Supabase', 'Zustand', 'dnd-kit', 'Celery', 'TypeScript'],
+    highlights: [
+      'True offline-first with IndexedDB queue and last-write-wins conflict resolution',
+      'NLP date detection via chrono-node — type "fix bug tomorrow" and the date auto-fills',
+      'Celery beat generates next recurrence when a recurring task is marked done',
+    ],
+  },
+  {
+    id: 5,
     title: 'Document Intelligence API',
     category: 'AI · Backend',
     description:
