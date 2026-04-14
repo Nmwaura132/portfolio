@@ -1,37 +1,37 @@
 import { motion } from 'framer-motion';
-import { Github, ExternalLink, BarChart3, Brain, Zap, FileText, CheckSquare } from 'lucide-react';
+import { Github, ExternalLink, BarChart3, Zap, FileText, CheckSquare, TrendingUp, Briefcase } from 'lucide-react';
 
 const projects = [
   {
     id: 1,
     title: 'NSE Analytics',
-    category: 'Full-Stack · Data Science',
+    category: 'Full-Stack · Machine Learning',
     description:
-      'Full-stack Nairobi Securities Exchange analytics platform. Real-time stock data, ML-powered price forecasting, technical indicators (RSI, MACD, Bollinger Bands), Telegram bot alerts, and portfolio management — containerized with Docker.',
+      'Full-stack Nairobi Securities Exchange analytics platform with a production-hardened ML layer. Walk-forward validated Random Forest price forecasting, Markowitz portfolio optimisation with Ledoit-Wolf covariance shrinkage, MACD/RSI strategy backtesting with Sharpe ratio, and a Telegram bot delivering real-time alerts — containerized with Docker.',
     icon: BarChart3,
     github: 'https://github.com/Nmwaura132/nse-analytics',
     demo: null,
     technologies: ['Django', 'React', 'Python', 'MySQL', 'Docker', 'scikit-learn', 'Telegram API'],
     highlights: [
-      'Random Forest + Linear Regression models for price prediction',
-      'Real-time data via RapidAPI with custom NSE scrapers',
-      'Telegram bot delivering market alerts and portfolio tracking',
+      'Walk-forward cross-validation (5 folds) with directional accuracy benchmarked against persistence baseline',
+      'Markowitz portfolio optimiser with Ledoit-Wolf covariance shrinkage for stable efficient frontier on NSE equities',
+      'MACD + RSI backtester reporting Sharpe ratio, max drawdown, and equity curve vs buy-and-hold',
     ],
   },
   {
     id: 2,
-    title: 'Kenya Real Estate Price Predictor',
-    category: 'Machine Learning · MLOps',
+    title: 'Kenya Mobile Money EDA',
+    category: 'Data Science · EDA',
     description:
-      'ML pipeline predicting Kenyan property prices from scraped listings. Feature engineering on location, size, and amenity data. Experiment tracking with MLflow, served via a FastAPI endpoint with a React dashboard.',
-    icon: Brain,
-    github: 'https://github.com/Nmwaura132',
+      'Exploratory data analysis tracing Kenya\'s fintech revolution across 16 years of M-Pesa CBK data. Growth curves from 2007 launch to 77M+ accounts, multiplicative seasonal decomposition, year-over-year analysis with COVID-19 impact, and correlation analysis identifying the agent network as the leading indicator of transaction volume.',
+    icon: TrendingUp,
+    github: 'https://github.com/Nmwaura132/mpesa-growth-eda',
     demo: null,
-    technologies: ['Python', 'XGBoost', 'MLflow', 'FastAPI', 'pandas', 'React', 'BeautifulSoup'],
+    technologies: ['Python', 'pandas', 'matplotlib', 'seaborn', 'statsmodels', 'Jupyter'],
     highlights: [
-      'Web scraping pipeline collecting listings from Kenyan property sites',
-      'MLflow tracking across model experiments with feature importance analysis',
-      'FastAPI endpoint serving predictions with confidence intervals',
+      'Traced Kenya\'s fintech revolution across 16 years of M-Pesa data — from 2007 launch to 77M+ registered accounts',
+      'Identified seasonal transaction spikes (Dec/Jan) and the 2020 COVID-era volume dip with annotated visualisations',
+      'Correlation analysis (r > 0.98) revealed agent network growth as the strongest predictor of transaction value',
     ],
   },
   {
@@ -80,6 +80,22 @@ const projects = [
       'Async Celery queue — upload returns immediately, client polls for result',
       'Per-field confidence scores (0.0–1.0) with SHA-256 deduplication',
       'Multi-page PDF support via pdf2image at 300 DPI',
+    ],
+  },
+  {
+    id: 6,
+    title: 'CareerOps — Job Board & ATS',
+    category: 'Full-Stack · HR Tech',
+    description:
+      'Public job board and applicant tracking portal built for an enterprise real estate firm. Candidates browse live vacancies, submit multi-step applications with CV upload, and track progress through a personal dashboard with an interview calendar. Backed by a Django REST API.',
+    icon: Briefcase,
+    github: 'https://github.com/Nmwaura132',
+    demo: null,
+    technologies: ['React 18', 'TypeScript', 'Vite', 'Tailwind', 'shadcn/ui', 'Redux Toolkit', 'FullCalendar', 'Recharts', 'Axios'],
+    highlights: [
+      'Live vacancy feed from a REST API with date/status filtering — only active, externally-published roles shown',
+      'Applicant dashboard with application history, progress tracking, and an interview calendar (FullCalendar)',
+      'Protected routes with JWT auth, auto-logout on inactivity, and Zod-validated multi-step application forms',
     ],
   },
 ];
