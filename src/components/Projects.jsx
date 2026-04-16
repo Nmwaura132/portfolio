@@ -124,7 +124,7 @@ export default function Projects() {
             transition={{ delay: index * 0.1, duration: 0.4 }}
           >
             <div className="project-icon-wrap">
-              <project.icon size={22} color="var(--teal)" />
+              <project.icon size={22} color="var(--blue)" />
             </div>
 
             <div className="project-body">

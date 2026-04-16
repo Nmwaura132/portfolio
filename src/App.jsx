@@ -7,6 +7,7 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import TerminalModal from './components/TerminalModal';
 import AchievementToast from './components/AchievementToast';
+import InteractiveEffects from './components/InteractiveEffects';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
 
       <TerminalModal />
       <AchievementToast />
+      <InteractiveEffects />
     </>
   );
 }
