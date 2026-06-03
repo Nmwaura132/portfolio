@@ -41,7 +41,7 @@ const projects = [
     description:
       'Business FAQ bot built on n8n and the WhatsApp Business API. Uses OpenAI to understand natural language queries, retrieves answers from a knowledge base, and escalates unresolved questions to a human agent.',
     icon: Zap,
-    github: 'https://github.com/Nmwaura132',
+    github: null,
     demo: null,
     technologies: ['n8n', 'WhatsApp API', 'OpenAI', 'Python', 'Webhook', 'JSON'],
     highlights: [
@@ -89,7 +89,7 @@ const projects = [
     description:
       'Public job board and applicant tracking portal built for an enterprise real estate firm. Candidates browse live vacancies, submit multi-step applications with CV upload, and track progress through a personal dashboard with an interview calendar. Backed by a Django REST API.',
     icon: Briefcase,
-    github: 'https://github.com/Nmwaura132',
+    github: null,
     demo: null,
     technologies: ['React 18', 'TypeScript', 'Vite', 'Tailwind', 'shadcn/ui', 'Redux Toolkit', 'FullCalendar', 'Recharts', 'Axios'],
     highlights: [
@@ -148,15 +148,22 @@ export default function Projects() {
               </div>
 
               <div className="project-actions">
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="project-link"
-                >
-                  <Github size={15} />
-                  Source
-                </a>
+                {project.github ? (
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="project-link"
+                  >
+                    <Github size={15} />
+                    Source
+                  </a>
+                ) : (
+                  <span className="project-link-private">
+                    <Github size={15} />
+                    Private — available on request
+                  </span>
+                )}
                 {project.demo && (
                   <a
                     href={project.demo}

@@ -21,9 +21,11 @@ const COMMANDS = {
 
   'ls projects/': () =>
     'nse-analytics/          — Django + React stock analytics platform\n' +
-    'kenya-real-estate-ml/   — XGBoost + MLflow price predictor\n' +
-    'whatsapp-ai-faq-bot/    — n8n + OpenAI chatbot\n' +
-    'invoice-generator/      — Django + React invoicing app',
+    'mpesa-growth-eda/       — 16 years of M-Pesa CBK data analysis\n' +
+    'whatsapp-ai-faq-bot/    — n8n + OpenAI FAQ bot (private)\n' +
+    'flow-todo/              — Offline-first Kanban app (React + FastAPI)\n' +
+    'doc-intel-api/          — GPT-4o invoice extraction API\n' +
+    'career-ops/             — Job board & ATS (private)',
 
   'cat contact.txt': () =>
     'email:    nmwaura132@gmail.com\n' +

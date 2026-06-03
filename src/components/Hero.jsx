@@ -59,7 +59,7 @@ export default function Hero() {
         <div className="hero-stats">
           <span className="hero-stat-item"><span>5+</span> Years Experience</span>
           <span className="hero-stat-item"><span>10+</span> Apps Shipped</span>
-          <span className="hero-stat-item"><span>100+</span> HTB Challenges</span>
+          <span className="hero-stat-item"><span>100+</span> HackTheBox Challenges</span>
         </div>
 
         <div className="hero-cta">

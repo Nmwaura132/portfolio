@@ -40,7 +40,7 @@ export default function Sidebar() {
     >
       {/* Name & Title */}
       <div>
-        <h1 className="sidebar-name">Nelson<br />Mwaura</h1>
+        <p className="sidebar-name">Nelson<br />Mwaura</p>
         <p className="sidebar-title">Backend Dev · Data Scientist · ML Engineer</p>
         <p className="sidebar-tagline">
           Building reliable APIs, data pipelines, and automation systems
