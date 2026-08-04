@@ -1,7 +1,12 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import react from '@vitejs/plugin-react';
+import { defineConfig } from 'vite';
 
-// https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-})
+  ssgOptions: {
+    // Social scrapers do not run JS, so every route is emitted as real HTML with
+    // its own title, canonical, and og:* set baked in.
+    formatting: 'minify',
+    dirStyle: 'nested',
+  },
+});

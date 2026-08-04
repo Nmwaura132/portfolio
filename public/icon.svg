@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Nelson Mwaura">
+  <rect width="32" height="32" rx="7" fill="#11100f"/>
+  <g fill="#f1af57">
+    <rect x="7" y="7" width="3.8" height="18"/>
+    <rect x="21.2" y="7" width="3.8" height="18"/>
+    <polygon points="10.8,7 14.8,7 25,25 21,25"/>
+  </g>
+</svg>
